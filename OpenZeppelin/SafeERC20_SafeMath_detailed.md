@@ -102,4 +102,4 @@ contract MyCalculator {
 
 ## Conclusion
 
-Using `SafeERC20` and `SafeMath` enhances the security and reliability of your smart contracts by ensuring safe interactions with tokens and safe arithmetic operations. It's recommended to use the `using` directive for cleaner and more readable code.
+By using the using directive, you give the declared types (like IERC20 and uint256) the power to execute the functions from the libraries (of SafeERC20 and SafeMath) as if those functions were part of their own interface (IERC20, uint256).This enhances both usability and readability in your smart contracts!
