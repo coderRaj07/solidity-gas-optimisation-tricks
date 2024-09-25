@@ -33,11 +33,17 @@ contract OptimizedERC20 {
     function transfer(IERC20 token, address to, uint256 amount) public {
         token.safeTransfer(to, amount); // Safe ERC20 transfer
     }
+
+    function transferFrom(IERC20 token, address from, address to, uint256 amount) public {
+        token.safeTransferFrom(from, to, amount); // Safe transfer from another address
+    }
 }
 ```
 
 ### **When to Use SafeERC20:**
 Use SafeERC20 when you want to handle ERC20 token transfers securely, preventing any transfer issues that could lead to unexpected contract behavior.
+- **safeTransfer:** "I'm sending my tokens to you."
+- **safeTransferFrom:** "I'm sending someone else's tokens (with permission) to another person."
 
 ---
 
