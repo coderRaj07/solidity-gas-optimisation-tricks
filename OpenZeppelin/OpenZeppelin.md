@@ -33,10 +33,14 @@ contract OptimizedERC20 {
     function transfer(IERC20 token, address to, uint256 amount) public {
         token.safeTransfer(to, amount); // Safe ERC20 transfer
     }
-    
+
+    function transferAlt(address token, address to, uint256 amount) public {
+        IERC20(token).safeTransfer(to, amount); // Safe ERC20 transfer
+    }
+
     // using SafeERC20 for IERC20; 
     // the above code is not required for following kind of implementation
-    function transferAlt(address token, address to, uint256 amount) public {
+    function transferAltOne(address token, address to, uint256 amount) public {
         SafeERC20.safeTransfer(IERC20(token), to, amount); // Safe ERC20 transfer
     }
 
